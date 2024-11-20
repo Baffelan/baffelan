@@ -4,6 +4,8 @@ title = "Baffelan - Data Climbing"
 add_toc = true
 +++
 
+![Baffelan Logo](/images/baffelan_logo.png)
+
 # Hello, we are Baffelan!
 
 We are a team of data scientists and engineers who love to climb data mountains. We are passionate about data and we love to help our clients to get the most out of their data.
