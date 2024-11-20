@@ -1,13 +1,23 @@
 # The URL the site will be built for
 base_url = "http://www.baffelan.com"
-
+title = "Baffelan - Data Climbing"
+description = "Experienced guides for your data journey"
 theme = "no-style-please"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
+# Whether to generate feeds for your site
+generate_feeds = true
+
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+
+taxonomies = [
+    { name = "tags" },
+    { name = "categories" },
+    { name = "contexts" },
+]
 
 [markdown]
 # Whether to do syntax highlighting
@@ -16,3 +26,15 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+
+author = "Baffelan LLC"
+logo = "images/logo.png"
+header_nav = [
+    { name = "~home", url = "/" },
+    { name = "?about", url = "/about" },
+  #  { name = "#tags", url = "/tags" },
+  #  { name = "+categories", url = "/categories" },
+  #  { name = "@contexts", url = "/contexts" },
+]
+
+twitter_card = false

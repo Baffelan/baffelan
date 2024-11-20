@@ -1,5 +1,7 @@
 +++
 title = "Baffelan - Data Climbing"
+[extra]
+add_toc = true
 +++
 
 # Hello, we are Baffelan!
