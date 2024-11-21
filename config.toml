@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "http://www.baffelan.com"
+base_url = "https://www.baffelan.com"
 title = "Baffelan - Data Climbing"
 description = "Experienced guides for your data journey"
 theme = "no-style-please"
