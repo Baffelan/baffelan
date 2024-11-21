@@ -4,7 +4,7 @@ title = "Baffelan - Data Climbing"
 add_toc = true
 +++
 
-![Baffelan Logo](/images/baffelan_logo.png)
+![Baffelan Logo](/images/baffelan.png)
 
 # Hello, we are Baffelan!
 
