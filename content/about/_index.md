@@ -11,3 +11,6 @@ Baffelan is:
 - Hussain
 - Reilly
 - William
+
+# Start your data journey
+[Write us](mailto:me@gvdallariva.net)
