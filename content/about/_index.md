@@ -13,4 +13,4 @@ Baffelan is:
 - William
 
 # Start your data journey
-[Write us](mailto:me@gvdallariva.net)
+[Write to us](mailto:me@gvdallariva.net)
