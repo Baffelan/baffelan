@@ -31,4 +31,4 @@ We tame wild data. No data source, pipeline, or stream is too messy for us. Yes,
 We care. We commit to ethical approaches; we value community engagement; we offer responsible solutions; we promote sustainable design.
 
 # Start your data journey
-[Write us](mailto:me@gvdallariva.net)
+[Write to us](mailto:me@gvdallariva.net)
