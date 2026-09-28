@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+
+{% block title %}{{ section.title }} — Baffelan{% endblock title %}
+
+{% block content %}
+<section class="page-hero dark page-hero-tall">
+  {{ m::contours() }}
+  <div class="wrap">
+    <p class="label label-accent">{{ section.extra.kicker }}</p>
+    <h1>{{ section.extra.heading }}</h1>
+    <p class="lead">{{ section.extra.text }}</p>
+    <div class="actions"><a class="btn btn-accent btn-lg" href="/">Back to base camp</a></div>
+  </div>
+</section>
+{% endblock content %}

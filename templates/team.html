@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+
+{% block title %}Team — Baffelan{% endblock title %}
+{% block description %}{{ section.description }}{% endblock description %}
+
+{% block content %}
+{% set x = section.extra %}
+
+<section class="page-hero dark">
+  {{ m::contours() }}
+  <div class="wrap">
+    <p class="label label-accent">{{ x.kicker }}</p>
+    <h1>{{ x.heading }}</h1>
+    <p class="lead">{{ x.intro }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap profiles">
+    {% for p in x.core %}
+    <article class="profile-row">
+      {{ m::portrait(person=p, class="portrait portrait-lg") }}
+      <div class="profile-body">
+        <p class="label label-warm">{{ p.role }}</p>
+        <h2>{{ p.name }}</h2>
+        <p class="credentials">{{ p.credentials }}</p>
+        <p class="bio">{{ p.bio }}</p>
+        <ul class="tags">{% for t in p.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+        {% if p.links | length > 0 %}
+        <p class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% if x.wider | length > 0 %}
+<section class="section sand">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label label-warm">Also on the rope</p>
+        <h2>Guides we bring in for the right climb.</h2>
+      </div>
+    </div>
+    <div class="grid grid-4">
+      {% for p in x.wider %}
+      <article class="card mini">
+        {{ m::portrait(person=p, class="portrait portrait-sm") }}
+        <h3>{{ p.name }}</h3>
+        <p class="role">{{ p.role }}</p>
+        <p>{{ p.summary }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2>Start your data journey.</h2>
+        <p class="lead">Tell us where you want to go. We'll tell you honestly whether there's a route, and how we'd climb it.</p>
+      </div>
+      <a class="btn btn-accent btn-lg" href="/#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+{% endblock content %}

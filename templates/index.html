@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+
+{% block content %}
+{% set x = section.extra %}
+{% set team = get_section(path="team/_index.md") %}
+
+<!-- HERO -->
+<section class="hero dark">
+  {{ m::contours() }}
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="label label-accent">{{ x.hero_kicker }}</p>
+      <h1>{{ x.hero_title }}</h1>
+      <p class="lead">{{ x.hero_text }}</p>
+      <div class="actions">
+        <a class="btn btn-accent btn-lg" href="#contact">Start your climb</a>
+        <a class="btn btn-ghost btn-lg" href="#approach">See how we work</a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="/images/baffelan.png" alt="The Baffelan peak in autumn, larches below the limestone summit" width="904" height="508">
+      <figcaption class="mono">▲ {{ x.hero_caption }}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="pillars">
+  <div class="wrap grid grid-4">
+    {% for p in x.pillars %}
+    <div class="pillar">
+      {{ m::icon(name=p.icon) }}
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.text }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label label-warm">What we guide you through</p>
+        <h2>{{ x.services_title }}</h2>
+      </div>
+      <p class="section-aside">{{ x.services_text }}</p>
+    </div>
+    <div class="grid grid-2">
+      {% for s in x.services %}
+      <article class="card service">
+        <div class="mono num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</div>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.text }}</p>
+        <ul class="tags">{% for t in s.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach" class="section dark">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label label-accent">Our approach</p>
+        <h2>{{ x.approach_title }}</h2>
+      </div>
+      <p class="section-aside">{{ x.approach_text }}</p>
+    </div>
+    <svg class="profile" viewBox="0 0 1200 230" role="img" aria-label="Elevation profile of the five stages, rising to the summit at stage four and descending at stage five">
+      <path class="profile-fill" d="M0 228 L60 212 L140 200 L230 196 L330 150 L420 162 L520 118 L600 108 L700 122 L800 64 L870 74 L960 18 L1020 34 L1090 86 L1160 120 L1200 132 L1200 230 L0 230 Z"/>
+      <path class="profile-line" d="M0 228 L60 212 L140 200 L230 196 L330 150 L420 162 L520 118 L600 108 L700 122 L800 64 L870 74 L960 18 L1020 34 L1090 86 L1160 120 L1200 132"/>
+      <g class="profile-camps">
+        <circle cx="120" cy="203" r="8"/><circle cx="360" cy="154" r="8"/><circle cx="600" cy="108" r="8"/><circle cx="960" cy="18" r="10"/><circle cx="1140" cy="110" r="8"/>
+      </g>
+      <circle class="profile-summit" cx="960" cy="18" r="4"/>
+    </svg>
+    <ol class="camps grid grid-5">
+      {% for c in x.camps %}
+      <li class="camp">
+        <p class="label label-accent">{{ c.label }}</p>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- TEAM PREVIEW -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label label-warm">The rope team</p>
+        <h2>{{ x.team_title }}</h2>
+      </div>
+      <a class="btn btn-outline" href="/team/">Meet the whole team {{ m::icon(name="arrow") }}</a>
+    </div>
+    <div class="grid grid-3">
+      {% for p in team.extra.core %}{% if loop.index <= 3 %}
+      <article class="person-card">
+        {{ m::portrait(person=p, class="portrait portrait-md") }}
+        <h3>{{ p.name }}</h3>
+        <p class="role">{{ p.role }}</p>
+        <p>{{ p.summary }}</p>
+      </article>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="section sand">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label label-warm">Selected climbs</p>
+        <h2>{{ x.work_title }}</h2>
+      </div>
+    </div>
+    <div class="grid grid-3">
+      {% for c in x.cases %}
+      <article class="card case">
+        <p class="label label-blue">{{ c.kicker }}</p>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text }}</p>
+        <p class="case-client">{{ c.client }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="clients">
+      <p class="label">Organisations we have worked with</p>
+      <div class="grid grid-5">
+        {% if x.clients | length > 0 %}
+          {% for c in x.clients %}<div class="client"><img src="{{ c.logo }}" alt="{{ c.name }}"></div>{% endfor %}
+        {% else %}
+          {% for i in [1,2,3,4,5] %}<div class="client client-empty mono">[Client logo]</div>{% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <div class="wrap">
+    <div class="contact">
+      <div class="contact-copy">
+        <p class="label label-accent">Contact</p>
+        <h2>{{ x.contact_title }}</h2>
+        <p class="lead">{{ x.contact_text }} We reply within {{ config.extra.reply_time }}.</p>
+        <p>Prefer email? <a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></p>
+        <div class="company">
+          <p class="label label-accent">Company details</p>
+          <p class="company-name">{{ config.extra.company_name }}</p>
+          <p>{{ config.extra.company_form }}</p>
+          <p>Registry code: {{ config.extra.company_registry_code }}</p>
+          {% if config.extra.company_vat %}<p>VAT number: {{ config.extra.company_vat }}</p>{% endif %}
+          <p>Registered office: {{ config.extra.company_address }}</p>
+        </div>
+      </div>
+
+      <!-- Netlify Forms: submissions appear in the Netlify dashboard under "Forms" -->
+      <form class="form" name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-org">Organisation <span class="optional">(optional)</span></label>
+            <input id="cf-org" name="organisation" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="cf-topic">What are you looking to climb?</label>
+            <select id="cf-topic" name="topic">
+              {% for s in x.services %}<option>{{ s.title }}</option>{% endfor %}
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-msg">Tell us about your project</label>
+          <textarea id="cf-msg" name="message" rows="6" required></textarea>
+        </div>
+        <div class="form-foot">
+          <p class="fineprint">We only use your details to reply to your message.</p>
+          <button class="btn btn-dark btn-lg" type="submit">Send message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock content %}
