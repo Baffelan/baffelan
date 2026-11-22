@@ -23,7 +23,7 @@ credentials = "PhD, Mathematics"
 summary = "PhD in Mathematics and 15+ years across data science, AI and statistics. Chooses the mountains worth climbing."
 bio = "Giulio has a PhD in Mathematics and more than fifteen years of experience across data science, AI, statistics and innovation management. He has taught data science as a Senior Lecturer at the University of Canterbury in New Zealand, led a team building an AI-integrated data discovery platform, and today works on SDMX-based data systems for official statistics. He founded Baffelan to take data science where it can do the most good. As CEO, he chooses the mountains worth climbing and makes sure the right people are on the rope."
 tags = ["Data systems & SDMX", "Data science & AI", "Data governance", "Complex networks"]
-photo = ""
+photo = "/images/team/giulio.jpg"
 links = [
     { label = "Website", url = "https://www.gvdallariva.net/" },
     { label = "GitHub", url = "https://github.com/gvdr" },
@@ -37,7 +37,7 @@ credentials = "PhD, Causal Machine Learning"
 summary = "PhD in Causal Machine Learning. Makes sure the impact evaluation and the AI actually hold up."
 bio = "Ahmed has a PhD in Causal Machine Learning. His personal mountain has always been bridging the gap between rigorous causal inference and AI, working out the right way to bring the two together in a statistical pipeline. Along the way he's built several open source tools that put those methods into practice. At Baffelan, he's the one making sure the impact evaluation work and AI integration actually hold up."
 tags = ["Causal inference", "Impact evaluation", "AI in statistical pipelines", "Open-source tooling"]
-photo = ""
+photo = "/images/team/ahmed.jpg"
 links = []
 
 [[extra.core]]

@@ -38,6 +38,28 @@
   </div>
 </section>
 
+<!-- ETHICS -->
+<section id="ethics" class="section sand">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label label-warm">Ethics &amp; values</p>
+        <h2>{{ x.ethics_title }}</h2>
+      </div>
+      <p class="section-aside">{{ x.ethics_text }}</p>
+    </div>
+    <div class="grid grid-4">
+      {% for e in x.ethics %}
+      <article class="card ethic">
+        <div class="mono num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</div>
+        <h3>{{ e.title }}</h3>
+        <p>{{ e.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section id="services" class="section">
   <div class="wrap">

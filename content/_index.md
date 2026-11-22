@@ -18,6 +18,9 @@ services_text = "Most projects need more than one of these. We bring the right m
 approach_title = "Every data project is a mountain. Here is how we climb it."
 approach_text = "The summit is not the end of the job. Most projects fail on the way down, when the result meets the people who have to use it."
 
+ethics_title = "Your values set the route. The tools follow."
+ethics_text = "Before we choose a model, a pipeline or an LLM, we learn what your organisation stands for: its ethics, its policies, and its duties to the people its data describes. Those values become design requirements, and every tool we build is checked against them."
+
 team_title = "On a serious climb, everyone is on the same rope."
 
 work_title = "Summits we've reached with our clients."
@@ -49,6 +52,23 @@ text = "No source, pipeline or stream is too messy. Yes, even that dataset you h
 icon = "shield"
 title = "A safe journey"
 text = "We commit to ethical approaches, community engagement, responsible solutions and sustainable design."
+
+# --- Ethics: how values shape the tools we build --------------------------
+[[extra.ethics]]
+title = "Values first, technology second"
+text = "We start by mapping your organisation's ethical commitments, regulations and community obligations, and turn them into concrete requirements for the system. If a tool can't meet them, we don't build it that way."
+
+[[extra.ethics]]
+title = "People stay accountable"
+text = "AI and LLMs assist; they don't decide on their own. Where an output affects people, we design clear points for human review, override and escalation."
+
+[[extra.ethics]]
+title = "Transparent by design"
+text = "Documented data sources, model choices and known limitations. You and your stakeholders can see how a result was produced and where it should not be trusted."
+
+[[extra.ethics]]
+title = "Your data stays yours"
+text = "Privacy and data protection are built in from the first sketch. We respect data sovereignty and keep sensitive data where it belongs, never feeding it to third-party services without your consent."
 
 # --- Services (order = order on the page and in the contact form) ----------
 [[extra.services]]
