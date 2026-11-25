@@ -48,7 +48,7 @@ credentials = "PhD, Human-Computer Interaction"
 summary = "PhD in Human-Computer Interaction. Keeps asking who we're climbing for, at every stage."
 bio = "Mela has a PhD in Human-Computer Interaction, with a focus on human-centred design and digital adoption. She knows that in data projects the maths can be pristine and yet nobody uses the tool that has been built. One of the reasons is that experts can get absorbed in the technical challenge and forget to fit the path to the people who'll walk it. Her job at Baffelan is to keep asking who we're climbing for, and to check in with them at every stage. She makes sure the client doesn't get abandoned at the parking lot after handing over the brief."
 tags = ["Human-centred design", "Digital adoption", "User research"]
-photo = ""
+photo = "/images/team/mela.jpg"
 links = []
 
 # ---------------------------------------------------------------------------
