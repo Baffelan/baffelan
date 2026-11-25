@@ -23,6 +23,10 @@ ethics_text = "Before we choose a model, a pipeline or an LLM, we learn what you
 
 team_title = "On a serious climb, everyone is on the same rope."
 
+# Show/hide switches. Content below is kept; flip to true once it's real.
+show_cases = false     # the three case studies
+show_clients = false   # client logos strip
+
 work_title = "Summits we've reached with our clients."
 
 contact_title = "Start your data journey."

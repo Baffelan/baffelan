@@ -36,7 +36,8 @@
   </div>
 </section>
 
-{% if x.wider | length > 0 %}
+{% set wider = x.wider | filter(attribute="show", value=true) %}
+{% if wider | length > 0 %}
 <section class="section sand">
   <div class="wrap">
     <div class="section-head">
@@ -46,7 +47,7 @@
       </div>
     </div>
     <div class="grid grid-4">
-      {% for p in x.wider %}
+      {% for p in wider %}
       <article class="card mini">
         {{ m::portrait(person=p, class="portrait portrait-sm") }}
         <h3>{{ p.name }}</h3>

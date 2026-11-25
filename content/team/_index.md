@@ -52,10 +52,12 @@ photo = "/images/team/mela.jpg"
 links = []
 
 # ---------------------------------------------------------------------------
-# Wider team, shown as smaller cards. Fill in role and a one-line bio.
+# Wider team, shown as smaller cards. Fill in role and a one-line bio,
+# then set show = true. People with show = false stay hidden.
 # ---------------------------------------------------------------------------
 [[extra.wider]]
 name = "Connor"
+show = false
 initials = "CO"
 role = "[Role]"
 summary = "[One-line bio]"
@@ -63,6 +65,7 @@ photo = ""
 
 [[extra.wider]]
 name = "Hussain"
+show = false
 initials = "HU"
 role = "[Role]"
 summary = "[One-line bio]"
@@ -70,6 +73,7 @@ photo = ""
 
 [[extra.wider]]
 name = "Reilly"
+show = false
 initials = "RE"
 role = "[Role]"
 summary = "[One-line bio]"
@@ -77,6 +81,7 @@ photo = ""
 
 [[extra.wider]]
 name = "William"
+show = false
 initials = "WI"
 role = "[Role]"
 summary = "[One-line bio]"

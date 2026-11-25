@@ -136,7 +136,8 @@
   </div>
 </section>
 
-<!-- WORK -->
+<!-- WORK (hidden until there is real content: see show_cases / show_clients) -->
+{% if x.show_cases or x.show_clients %}
 <section id="work" class="section sand">
   <div class="wrap">
     <div class="section-head">
@@ -145,6 +146,7 @@
         <h2>{{ x.work_title }}</h2>
       </div>
     </div>
+    {% if x.show_cases %}
     <div class="grid grid-3">
       {% for c in x.cases %}
       <article class="card case">
@@ -155,6 +157,8 @@
       </article>
       {% endfor %}
     </div>
+    {% endif %}
+    {% if x.show_clients %}
     <div class="clients">
       <p class="label">Organisations we have worked with</p>
       <div class="grid grid-5">
@@ -165,8 +169,10 @@
         {% endif %}
       </div>
     </div>
+    {% endif %}
   </div>
 </section>
+{% endif %}
 
 <!-- CONTACT -->
 <section id="contact" class="section contact-section">

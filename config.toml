@@ -22,7 +22,7 @@ nav = [
     { name = "Our approach", url = "/#approach" },
     { name = "Ethics", url = "/#ethics" },
     { name = "Services", url = "/#services" },
-    { name = "Work", url = "/#work" },
+    # { name = "Work", url = "/#work" },   # re-enable with show_cases/show_clients
     { name = "Team", url = "/team/" },
 ]
 
