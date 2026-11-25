@@ -1,6 +1,16 @@
 {% extends "base.html" %}
+{% import "macros.html" as m %}
+
+{% block title %}Off route — Baffelan{% endblock title %}
 
 {% block content %}
-    404:
-    It seems you took a path to nowhere.    
+<section class="page-hero dark page-hero-tall">
+  {{ m::contours() }}
+  <div class="wrap">
+    <p class="label label-accent">404 · Off route</p>
+    <h1>It seems you took a path to nowhere.</h1>
+    <p class="lead">This page doesn't exist, or it has moved. Let's get you back on the trail.</p>
+    <div class="actions"><a class="btn btn-accent btn-lg" href="/">Back to base camp</a></div>
+  </div>
+</section>
 {% endblock content %}

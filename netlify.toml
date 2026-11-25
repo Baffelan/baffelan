@@ -26,3 +26,12 @@ command = "zola build --base-url $DEPLOY_PRIME_URL"
   from = "/.well-known/webfinger*"
   to = "https://fed.brid.gy/.well-known/webfinger"
   status = 302
+# The old About page is now the Team page
+[[redirects]]
+  from = "/about"
+  to = "/team/"
+  status = 301
+[[redirects]]
+  from = "/about/*"
+  to = "/team/"
+  status = 301

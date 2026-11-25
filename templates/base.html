@@ -1,0 +1,96 @@
+{% import "macros.html" as m %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Baffelan">
+  <meta property="og:title" content="Baffelan — Data Climbing">
+  <meta property="og:description" content="{{ config.description }}">
+  <meta property="og:image" content="{{ config.base_url }}/images/baffelan_logo.png">
+  <link rel="icon" type="image/svg+xml" href="/images/peak-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ config.extra.company_name }}",
+    "url": "{{ config.base_url }}",
+    "logo": "{{ config.base_url }}/images/baffelan_logo.png",
+    "email": "{{ config.extra.email }}",
+    "identifier": "{{ config.extra.company_registry_code }}",
+    "address": { "@type": "PostalAddress", "streetAddress": "Sepapaja tn 6", "postalCode": "15551", "addressLocality": "Tallinn", "addressCountry": "EE" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      {{ m::wordmark() }}
+      <nav class="nav" aria-label="Main">
+        {% for item in config.extra.nav %}
+        <a href="{{ item.url }}">{{ item.name }}</a>
+        {% endfor %}
+        <a class="btn btn-accent btn-sm" href="/#contact">Start your climb</a>
+      </nav>
+      <details class="menu">
+        <summary aria-label="Open menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </summary>
+        <div class="menu-panel">
+          {% for item in config.extra.nav %}
+          <a href="{{ item.url }}">{{ item.name }}</a>
+          {% endfor %}
+          <a class="btn btn-accent" href="/#contact">Start your climb</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock content %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="/images/baffelan_logo.png" alt="Baffelan — Data Climbing" width="112" height="112">
+          <p>Experienced guides for your data journey. A boutique data science consultancy.</p>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <h2 class="label label-accent">Explore</h2>
+            {% for item in config.extra.nav %}<a href="{{ item.url }}">{{ item.name }}</a>{% endfor %}
+          </div>
+          <div>
+            <h2 class="label label-accent">Contact</h2>
+            <a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a>
+            {% if config.extra.linkedin %}<a href="{{ config.extra.linkedin }}">LinkedIn</a>{% endif %}
+            {% if config.extra.github %}<a href="{{ config.extra.github }}">GitHub</a>{% endif %}
+          </div>
+          <div>
+            <h2 class="label label-accent">Company</h2>
+            <span>{{ config.extra.company_name }}</span>
+            <span>Registry code {{ config.extra.company_registry_code }}</span>
+            {% if config.extra.company_vat %}<span>VAT {{ config.extra.company_vat }}</span>{% endif %}
+            <span>{{ config.extra.company_address }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© {{ now() | date(format="%Y") }} {{ config.extra.company_name }} · {{ config.extra.company_form }}</span>
+        <span class="mono">▲ Data climbing</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
