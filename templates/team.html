@@ -46,13 +46,15 @@
         <h2>Guides we bring in for the right climb.</h2>
       </div>
     </div>
-    <div class="grid grid-4">
+    <div class="grid grid-3">
       {% for p in wider %}
-      <article class="card mini">
-        {{ m::portrait(person=p, class="portrait portrait-sm") }}
-        <h3>{{ p.name }}</h3>
-        <p class="role">{{ p.role }}</p>
-        <p>{{ p.summary }}</p>
+      <article class="card collab">
+        {{ m::portrait(person=p, class="portrait portrait-xs") }}
+        <div class="collab-body">
+          <h3>{{ p.name }}</h3>
+          <p class="role">{{ p.role }}</p>
+          <p>{{ p.summary }}</p>
+        </div>
       </article>
       {% endfor %}
     </div>

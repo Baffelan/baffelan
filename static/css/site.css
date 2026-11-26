@@ -216,6 +216,14 @@ p { margin: 0; }
 .portrait-lg .initials { font-size: 56px; }
 .portrait-sm { height: 180px; border-radius: 4px; }
 .portrait-sm .initials { font-size: 36px; }
+.team-group { margin-bottom: 20px; }
+.team-group-2 { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
+.collab { padding: 16px; display: flex; gap: 18px; align-items: flex-start; }
+.portrait-xs { width: 104px; height: 130px; flex: 0 0 104px; }
+.portrait-xs .initials { font-size: 28px; }
+.collab-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.collab h3 { font-size: 20px; }
+.collab p { font-size: 14px; color: var(--muted); }
 .person-card { display: flex; flex-direction: column; gap: 6px; }
 .person-card .portrait { margin-bottom: 12px; }
 .person-card h3 { font-size: 24px; }

@@ -123,6 +123,7 @@
       </div>
       <a class="btn btn-outline" href="/team/">Meet the whole team {{ m::icon(name="arrow") }}</a>
     </div>
+    <p class="label team-group">Core team</p>
     <div class="grid grid-3">
       {% for p in team.extra.core %}{% if loop.index <= 3 %}
       <article class="person-card">
@@ -133,6 +134,22 @@
       </article>
       {% endif %}{% endfor %}
     </div>
+    {% set wider = team.extra.wider | filter(attribute="show", value=true) %}
+    {% if wider | length > 0 %}
+    <p class="label team-group team-group-2">Collaborators · guides we bring in for the right climb</p>
+    <div class="grid {% if wider | length > 3 %}grid-4{% else %}grid-3{% endif %}">
+      {% for p in wider %}
+      <article class="card collab">
+        {{ m::portrait(person=p, class="portrait portrait-xs") }}
+        <div class="collab-body">
+          <h3>{{ p.name }}</h3>
+          <p class="role">{{ p.role }}</p>
+          <p>{{ p.summary }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
 </section>
 

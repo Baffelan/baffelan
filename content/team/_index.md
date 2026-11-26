@@ -86,4 +86,29 @@ initials = "WI"
 role = "[Role]"
 summary = "[One-line bio]"
 photo = ""
+
+# --- PREVIEW ONLY: example collaborators (fake names, AI-generated faces) ---
+[[extra.wider]]
+name = "Lukas"
+initials = "LU"
+role = "Spatial Data Scientist"
+summary = "Builds geospatial pipelines and spatial models. Brought in for GIS-heavy climbs."
+photo = "/images/team/example-lukas.jpg"
+show = true
+
+[[extra.wider]]
+name = "Sara"
+initials = "SA"
+role = "Survey Statistician"
+summary = "Designs samples and weights for official surveys. On the rope for statistics projects."
+photo = "/images/team/example-sara.jpg"
+show = true
+
+[[extra.wider]]
+name = "Tomás"
+initials = "TO"
+role = "Data Engineer"
+summary = "Tames streaming data and fragile pipelines so the analysis stays right."
+photo = "/images/team/example-tomas.jpg"
+show = true
 +++
